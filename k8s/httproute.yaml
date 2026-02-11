@@ -16,5 +16,5 @@ spec:
         type: PathPrefix
         value: /
     backendRefs:
-    - name: python-app-service.python-app.svc.cluster.local  # Must match your Service name
+    - name: python-app-service
       port: 5000                # Must match your Service port
