@@ -1,0 +1,15 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: shared-external-gateway
+  namespace: gateway-system
+spec:
+  gatewayClassName: istio  # Use 'istio' for AKS Managed Istio
+  listeners:
+  - name: http
+    port: 80
+    protocol: HTTP
+    hostname: "*.kubecanops.win" 
+    allowedRoutes:
+      namespaces:
+        from: All

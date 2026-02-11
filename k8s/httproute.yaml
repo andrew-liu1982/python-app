@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: python-app-route
+  namespace: python-app
+spec:
+  parentRefs:
+  - name: shared-external-gateway
+    namespace: gateway-system
+    kind: Gateway
+  hostnames:
+  - "python-app.kubecanops.win"  # Must match the hostname in your Gateway
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: python-app-service.python-app.svc.cluster.local  # Must match your Service name
+      port: 5000                # Must match your Service port
