@@ -8,5 +8,5 @@ metadata:
   #   backstage.io/techdocs-ref: dir:.
 spec:
   type: service
-  owner: user:liuzhiyong.1982@kubecanops.win
+  owner: user:liuzhiyong_1982_kubecanops.win
   lifecycle: experimental
